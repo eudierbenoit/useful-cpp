@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/string_manipulation.hpp
+string
+-
+vector
+-
+
+/home/benoit/Documents/PROJECTS/OPEN-SOURCE/c++-lib/src/string_manipulation.cpp
+string_manipulation.hpp
+/home/benoit/Documents/PROJECTS/OPEN-SOURCE/c++-lib/src/string_manipulation.hpp
+sstream
+-
+

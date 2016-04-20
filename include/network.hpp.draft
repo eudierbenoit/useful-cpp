@@ -1,0 +1,44 @@
+#ifndef AELIB_NETWORK_HPP
+#define AELIB_NETWORK_HPP
+
+#include <vector>
+#include <stdint.h>
+
+/*
+ * Provides some convenience functions used in network application.
+ * This is used with boost libraries.
+ * */
+namespace aelib {
+    namespace network {
+
+        /*
+         * Boost::any container
+         * Can contain byte(uint8_t), short(uint16_t), and strings.
+         * */
+
+        /*
+         * Will pack the given arguments following the given format. Similar to
+         * struct.pack python function.
+         * @args: * fmt is a string which explains the structure of a packet:
+         *      (for the moment)
+         *      B for byte - 1 byte
+         *      s for string - string is a sequence of char. should be followed
+         *          the string size (example s5 for 'hello')
+         *      h for short - 2 bytes.
+         *
+         *      endianness:
+         *      !  in front to pack with big endian.
+         *      (other will be implemented later)
+         *      * values to pack is the values you want to put in the packet.
+         *      Different approaches here. Either we can use a vector of string
+         *      and  convert the value to byte, short, int...whatever. Or we
+         *      can use a container which contains values of different type.
+         * @return: uint8_t vector.
+         * Will raise exception is the format and the arguments do not
+         * correspond.
+         * */
+        std::vector<uint8_t> pack(std::string fmt, std::vector<std::string> values_to_pack);
+
+    }
+}
+#endif
