@@ -1,1 +1,0 @@
-/usr/local/bin/c++  -fPIC  -std=c++11 -pg   -shared -Wl,-soname,libaelib.so -o libaelib.so CMakeFiles/aelib.dir/src/string_manipulation.cpp.o 
